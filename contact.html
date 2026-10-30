@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>Contact Me</h1>
+
+<nav>
+    <a href="index.html">Home</a> |
+    <a href="contact.html">Contact Me</a>
+</nav>
+
+<h2>Get in Touch</h2>
+
+<form id="contactForm">
+
+    <label for="fullName">Full Name:</label>
+    <input type="text" id="fullName" name="fullName">
+    <br><br>
+
+    <label for="email">Email Address:</label>
+    <input type="email" id="email" name="email">
+    <br><br>
+
+    <label for="country">Country:</label>
+    <input type="text" id="country" name="country">
+    <br><br>
+
+    <label for="comments">Comments:</label>
+    <br>
+    <textarea id="comments" name="comments" rows="5" cols="30"></textarea>
+    <br><br>
+
+    <button type="submit">Submit</button>
+
+</form>
+
+<script>
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const fullName = document.getElementById("fullName").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const country = document.getElementById("country").value.trim();
+        const comments = document.getElementById("comments").value.trim();
+
+        if (fullName === "" || email === "" || country === "" || comments === "") {
+            alert("Please fill in all fields.");
+            return;
+        }
+
+        alert("Your form has been submitted successfully!");
+
+        this.reset();
+    });
+</script>
+
+</body>
+</html>
